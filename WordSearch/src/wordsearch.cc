@@ -18,7 +18,7 @@ std::vector<std::string> GetWords() {
     return words;
 
 }
-void PrintBoard() {
+void PrintBoardOnly() {
     std::vector<std::vector<char>> board = GetBoard();
     for(int x = 1; x <= 10; x++) {
         std::cout<<x<<" ";
@@ -33,6 +33,10 @@ void PrintBoard() {
         std::cout<<"\n";
         r++;
     }
+
+}
+void PrintBoard() {
+    PrintBoardOnly();
     std::cout<<"\n";
     std::vector<std::string>words = GetWords();
     int count = 1;
@@ -94,32 +98,35 @@ void CheckTopDiag(int row_first, int row_last, int col_first, int col_last, int&
     std::vector<std::string> words = GetWords();
     if (col_last > col_first) {
         for (int x = col_first - 1; x < col_last; x++) {
-            created_word += board.at(row_first - 1).at(x);
-            row_first--;
+            if (row_first > 0) { //prevents out of bounds error
+                created_word += board.at(row_first - 1).at(x);
+                row_first--;
+            }
         }
     }
     else { //up and left
         for (int x = col_first - 1; x >= col_last - 1; x--) {
+            created_word += board.at(row_first - 1).at(x);
+            if (row_first > 0) { //prevents out of bounds error
                 created_word += board.at(row_first - 1).at(x);
                 row_first--;
             }
+        }
 
     }
     CheckWord(created_word, tracker, words_tracker);
-
-
 }
 void CheckBottomDiag(int row_first, int row_last, int col_first, int col_last, int& tracker, std::map<std::string, bool>& words_tracker) {
     std::string created_word;
     std::vector<std::vector<char>> board = GetBoard();
     std::vector<std::string> words = GetWords();
-    if (col_first > col_last) {
+    if (col_first > col_last) { //right to left
         for (int x = row_first - 1; x < row_last; x++) {
             created_word += board.at(x).at(col_first - 1);
             col_first--;
         }
     }
-    else {
+    else { //left to right
         for (int x = row_first - 1; x < row_last; x++) {
             created_word += board.at(x).at(col_first - 1);
             col_first++;
@@ -157,5 +164,81 @@ void CheckWord(std::string created_word, int& tracker, std::map<std::string, boo
         std::cout<<"\nUnfortunately, you didn't find a word from the list of words. Keep on trying.\nYou still have "<<12-tracker<<" words left to find."<<std::endl;
 
     }
+}
+void Undo(std::string direction, std::string pos, int& num) {
+    std::string input;
+    std::cout<<"Enter c to continue or u to undo: ";
+    std::cin>>input;
+    while(input != "c" && input != "u") {
+        std::cout<<"Error! Enter c to continue or u to undo: ";
+        std::cin>>input;
+    }
+    while (input == "u") {
+        if (pos == "first") {
+            if (direction == "row") {
+                std::cout<<"Renter in the row of where you think the first letter of that word lies: ";
+            }
+            else {
+                std::cout<<"Renter in the column of where you think the first letter of that word lies: ";
+            }
+        }
+        else {
+             if (direction == "row") {
+                std::cout<<"Renter in the row of where you think the last letter of that word lies: ";
+            }
+            else {
+                std::cout<<"Renter in the column of where you think the last letter of that word lies: ";
+            }
+        }
+        std::cin>> num;
+        while((num < 1 || num > 10) && (num != 99)) {
+            std::cout<<"Error! Enter in a valid row from 1 through 10 or enter 99 to give up: ";
+            std::cin>>num;
+        }
+        std::cout<<"Enter c to continue or u to undo: ";
+        std::cin>>input;
+        while(input != "c" && input != "u") {
+            std::cout<<"Error! Enter c to continue or u to undo: ";
+            std::cin>>input;
+        }
+
+    }
+}
+void PrintInfo(std::string difficulty) {
+    if (difficulty == "e") {
+        std::cout<<"\nYou've chosen an easy word search to create and solve. You'll be asked to enter in 6 words that'll be randomly placed on an 8 by 8 board."<<std::endl;
+        std::cout<<"Remember since this is an 8 by 8 board, none of your words can't exceed beyond 8 letters in length"<<std::endl;
+    }
+    else if (difficulty == "m") {
+        std::cout<<"\nYou've chosen a medium word search to create and solve. You'll be asked to enter in 12 words that'll be randomly placed on an 14 by 14 board."<<std::endl;
+        std::cout<<"Remember since this is an 14 by 14 board, none of your words can't exceed beyond 14 letters in length"<<std::endl;
+    }
+    else {
+        std::cout<<"\nYou've chosen an hard word search to create and solve. You'll be asked to enter in 16 words that'll be randomly placed on an 20 by 20 board."<<std::endl;
+        std::cout<<"Remember since this is an 16 by 16 board, none of your words can't exceed beyond 20 letters in length"<<std::endl;
+    }
+   
 
 }
+
+void Undo(std::string& difficulty)   {
+    std::string input;
+    std::cout<<"Enter c to continue or u to undo: ";
+    std::cin>>input;
+    while(input != "c" && input != "u") {
+        std::cout<<"Error! Enter c to continue or u to undo: ";
+        std::cin>>input;
+    }
+    while(input == "u") {
+        std::cout<<"\nReenter in the difficulty of the word search puzzle you want to create.\nRemember enter e for easy, m for medium, or h for hard: ";
+        std::cin>>difficulty;
+        PrintInfo(difficulty);
+        std::cout<<"Enter c to continue or u to undo: ";
+        std::cin>>input;
+        while(input != "c" && input != "u") {
+            std::cout<<"Error! Enter c to continue or u to undo: ";
+            std::cin>>input;
+        }
+    }
+}
+
