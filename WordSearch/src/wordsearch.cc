@@ -206,18 +206,14 @@ void Undo(std::string direction, std::string pos, int& num) {
 }
 void PrintInfo(std::string difficulty) {
     if (difficulty == "e") {
-        std::cout<<"\nYou've chosen an easy word search to create and solve. You'll be asked to enter in 6 words that'll be randomly placed on an 8 by 8 board."<<std::endl;
-        std::cout<<"Remember since this is an 8 by 8 board, none of your words can't exceed beyond 8 letters in length"<<std::endl;
+        std::cout<<"\nYou've chosen an easy random word search to solve. You'll be asked to find 6 words on a 10 by 10 board."<<std::endl;
     }
     else if (difficulty == "m") {
-        std::cout<<"\nYou've chosen a medium word search to create and solve. You'll be asked to enter in 12 words that'll be randomly placed on an 14 by 14 board."<<std::endl;
-        std::cout<<"Remember since this is an 14 by 14 board, none of your words can't exceed beyond 14 letters in length"<<std::endl;
+        std::cout<<"\nYou've chosen a medium random word search to create and solve. You'll be asked to find 12 words on a 12 by 12 board."<<std::endl;
     }
     else {
-        std::cout<<"\nYou've chosen an hard word search to create and solve. You'll be asked to enter in 16 words that'll be randomly placed on an 20 by 20 board."<<std::endl;
-        std::cout<<"Remember since this is an 16 by 16 board, none of your words can't exceed beyond 20 letters in length"<<std::endl;
+        std::cout<<"\nYou've chosen an hard random word search to create and solve. You'll be asked to find 16 words on a 20 by 20 board."<<std::endl;
     }
-   
 
 }
 

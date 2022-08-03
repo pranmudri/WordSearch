@@ -5,7 +5,7 @@
 int main() {
     std::string input;
     WordSearchSolver w1(GetBoard(), GetWords());
-    std::cout<<"Hello There. Do you want to solve a word search puzzle? (y/n) ";
+    std::cout<<"Hello There. \nDo you want to solve a word search puzzle. I found this word search puzzle of the internet? (y/n) ";
     std::cin>>input;
     while(input != "y" && input != "n") {
         std::cout<<"Invalid Answer! Enter y for yes or n for no ";
@@ -87,14 +87,14 @@ int main() {
                 w1.PrintInfo(tracker);
             } 
         }
-        std::cout<<"\nWould you like to play again? (y/n) ";
+        std::cout<<"\nWould you like to re solve this wordsearch? (y/n) "; //Would people want to resolve same word search?
         std::cin>>input;
         while(input != "y" && input != "n") {
             std::cout<<"Invalid Answer! Enter y for yes or n for no ";
             std::cin>>input;
         }
     }
-    std::cout<<"Do you want to create your own word search puzzle and solve it? (y/n) ";
+    std::cout<<"Do you want to solve a random word search puzzle? You'll be provided a random set of words and they will be placed randomly on the board? (y/n) ";
     std::cin>>input;
     while(input != "y" && input != "n") {
         std::cout<<"Invalid Answer! Enter y for yes or n for no ";
@@ -108,11 +108,13 @@ int main() {
             std::cout<<"Error! Enter e for easy, m for medium, or h for hard: ";
             std::cin>>difficulty;
         }
-        PrintInfo(difficulty);
-        Undo(difficulty);
-        std::cout<<"\n";
+        PrintInfo(difficulty); //Method exists within WordSearch Class
+        Undo(difficulty); //Method exists within WordSearch Class
         Random r1(difficulty);
+        std::cout<<"\n\n Here is the board and the words that you need to find"<<std::endl;
         r1.Game();
+        
+
     }
 
     

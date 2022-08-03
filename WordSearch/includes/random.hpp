@@ -6,14 +6,16 @@
 #include <cstdlib>
 #include <ctime>
 #include <algorithm>
+#include <map>
 class Random {
 public:
     Random(std::string difficulty);
     void Game();
     std::vector<std::vector<char>> GenerateRandomBoard(std::vector<std::string>& words);
     void Print(std::vector<std::vector<char>> board);
-    void AddHozWords(std::vector<std::vector<char>>& board, std::vector<std::string>& words);
-    void AddVertWords(std::vector<std::vector<char>>& board, std::vector<std::string>& words);
+    void AddHozWords(std::vector<std::vector<char>>& board, std::vector<std::string>& words, std::vector<std::pair<size_t, size_t>>& occupied_spots);
+    void AddVertWords(std::vector<std::vector<char>>& board, std::vector<std::string>& words, std::vector<std::pair<size_t, size_t>>& occupied_spots);
+    std::vector<size_t> LongestConsecSeq(std::vector<std::pair<size_t, size_t>>& occupied_spots, size_t key_col);
     void HozHelper(std::vector<std::vector<char>> board, std::vector<std::string> words, int row);
 
 
