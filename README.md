@@ -1,1 +1,2 @@
 # WordSearch
+This is my word search project. In this project I worked on creating word search game in which the user would have to find a set of words on the board. I dound the puzzle and the words on the internet. I also decided to create random word search in which words will be placed randomly on the board. Also, the words will be randomly choosen. Additionally, there's a solver component I added in case the user has a hard time solving the puzzle.
