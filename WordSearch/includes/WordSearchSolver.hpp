@@ -17,7 +17,7 @@ public:
     std::map<std::string,std::vector<int>> TopDiagReverseWords();
     std::map<std::string,std::vector<int>> BottomDiagWords();
     std::map<std::string,std::vector<int>> BottomDiagReverseWords();
-    void PrintInfo(int& tracker);
+    void PrintInfo(int num_words);
 
 private:
     std::vector<std::vector<char>> board_;

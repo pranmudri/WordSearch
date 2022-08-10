@@ -1,5 +1,4 @@
 #include "WordSearchSolver.hpp"
-#include "wordsearch.hpp"
 WordSearchSolver::WordSearchSolver(std::vector<std::vector<char>> board, std::vector<std::string> words) {
     board_ = board;
     words_ = words;
@@ -218,15 +217,30 @@ std::map<std::string,std::vector<int>> WordSearchSolver::BottomDiagReverseWords(
     }
     return words_info;
 }
-
-void WordSearchSolver::PrintInfo(int& tracker) {
-    int num_words = tracker;
-    tracker = 12;
+void WordSearchSolver::PrintInfo(int num_words) {
     std::cout<<"\nIt seems as you decided to give up. Here are the solutions along with board."<<std::endl;
-    std::cout<<"\n  ";
-    PrintBoardOnly();
+    std::cout<<"\n   ";
+    for(int x = 1; x <= board_.size(); x++) {
+        if (x < 10) {
+            std::cout<<x<<"  ";
+        }
+        else {
+            std::cout<<x<<" ";
+        }
+    }
     std::cout<<"\n";
-    std::vector<std::map<std::string,std::vector<int>>> words_info;
+    for (size_t r =0; r < board_.size(); r++) {
+        std::cout<<r+1<<" ";
+        for(size_t x = 0; x < board_.size(); x++) {
+            if (x == 0 && r < 9) { //Used to make the board look neater whenever we print the first column and row val > 9 format looks slightly off
+                std::cout<<" ";
+            }
+            std::cout<<board_.at(r).at(x)<<"  ";
+        }
+        std::cout<<"\n";
+    }
+    std::cout<<"\n";
+    std::vector<std::map<std::string,std::vector<int>>> words_info; //Each element of this vector represents a map where the first element (key) is the word and the second element (value) is a vector of key positions
     words_info.push_back(HozWords());
     words_info.push_back(ReverseHozWords());
     words_info.push_back(VertWords());
@@ -249,18 +263,13 @@ void WordSearchSolver::PrintInfo(int& tracker) {
     std::cout<<"Third Column = Starting Column Index"<<std::endl;
     std::cout<<"Fourth Column = Ending Row Index"<<std::endl;
     std::cout<<"Fifth Column = Ending Column Index"<<std::endl;
-    // std::cout<<"\nFirst column represents the words you needed to find"<<std::endl;
-    // std::cout<<"Second column represents the row that holds the first letter of each word"<<std::endl;
-    // std::cout<<"Third column represents the column that holds the first letter of each word"<<std::endl;
-    // std::cout<<"Fourth column represents the row that holds the last letter of each word"<<std::endl;
-    // std::cout<<"Fifth column represents the column that holds the last letter of each word"<<std::endl;
     if (num_words == 0) {
         std::cout<<"\nYou weren't able to find any words."<<std::endl;
     }
     else if (num_words == 1) {
         std::cout<<"\nYou were only able to find one word."<<std::endl;
     }
-    else if (num_words == 11) {
+    else if (num_words == words_.size() - 1) {
         std::cout<<"You were very close. You only had to find one more word."<<std::endl;
     }
     else {
