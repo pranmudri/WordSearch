@@ -34,7 +34,10 @@ Then type in ./a.out
 ScreenShots of Program
 	
 
-![Uploading Screen Shot 2022-08-10 at 7.03.16 PM.png…]()
+
+
+<img width="864" alt="Screen Shot 2022-08-10 at 7 03 16 PM" src="https://user-images.githubusercontent.com/87880723/184257865-8309a94c-74dd-4620-8b09-276f39b6dcd0.png">
+
 
 This represents the starting screen of the game. 
 
