@@ -42,15 +42,34 @@ ScreenShots of Program
 This represents the starting screen of the game. 
 
 
+
+
+
+
+
+
 <img width="856" alt="Screen Shot 2022-08-10 at 7 03 59 PM" src="https://user-images.githubusercontent.com/87880723/184257357-db92bfc5-b8e0-43ec-9d12-41973bad764a.png">
 
 
-This image represents when the user successfully found a word by typing in the key indices of a specific word
+This image represents when the user successfully found a word by typing in the key indices of a specific word.
+
+
+
+
+
+
+
+
 
 
 <img width="842" alt="Screen Shot 2022-08-10 at 7 04 59 PM" src="https://user-images.githubusercontent.com/87880723/184257401-339e5539-ea58-45b7-8144-7fd35d76b8c7.png">
 
 In this image the user wasn’t able to find a certain word since they didn’t type in the right indices
+
+
+
+
+
 
 
 
@@ -61,10 +80,20 @@ In this image the user wasn’t able to find a certain word since they didn’t 
 This image represents when the user was able to find all the words in the first word search puzzle and decides to solve an easy random word search puzzle
 
 
+
+
+
+
+
 <img width="986" alt="Screen Shot 2022-08-11 at 5 00 52 PM" src="https://user-images.githubusercontent.com/87880723/184257528-99de4cd1-87b0-4b87-9ccf-83fa8019dfae.png">
 
 
 Whenever the user finds all the words in a random word search puzzle, they’re asked if they want to solve another one. 
+
+
+
+
+
 
 
 <img width="845" alt="Screen Shot 2022-08-11 at 5 01 16 PM" src="https://user-images.githubusercontent.com/87880723/184257544-f8b0b5fd-46b1-47ba-a805-2581d570cbe1.png">
@@ -72,14 +101,29 @@ Whenever the user finds all the words in a random word search puzzle, they’re 
 This image represents the board of a random hard level word search puzzle since the user answered yes ro solving another random word search puzzle and wanted to solve a hard one. 
 
 
+
+
+
+
+
+
 <img width="858" alt="Screen Shot 2022-08-11 at 5 01 48 PM" src="https://user-images.githubusercontent.com/87880723/184257567-9b0f3b54-5363-4b7d-b5c7-77cf073394b5.png">
 
 This image depicts the solutions to the word search puzzle formatted in a table since the user decided to quit.
+
+
+
+
+
+
+
 
 <img width="497" alt="Screen Shot 2022-08-11 at 5 02 03 PM" src="https://user-images.githubusercontent.com/87880723/184257581-601b457f-840d-4e9c-85f7-98949d3881b6.png">
 
 
 This image shows a description of what each column signifies in the solution table as well as the number of words the user found. (Note I found where the triangle lies, that’s why it says I found 1 word). Additionally, whenever the user is asked if they want to solve another random word search puzzle after solving one and they answer no, the game ends.
+
+
 
 Additional Features to Work on Later
 In the future I hope to be able to have the words be placed in reverse horizontal and vertical direction as well as have words be placed diagonally on the board
