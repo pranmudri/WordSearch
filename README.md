@@ -1,10 +1,18 @@
 # WordSearch
 Table of Contents
+
 Description/Features of My Project
+
 Motivation for Project
+
+
 Difficulties Ran Into
+
 How to Run Project in VS Code on local Machine
+
 Images of My Project
+
+
 Additional Features to Add Later 
 
 Description/Features of My Project
