@@ -35,7 +35,7 @@ Difficulties Ran Into
 
 
 How to run program in VS Code
-	Type in the terminal clang++ -std=c++20 -Iincludes ./src/main.cc ./src/random.cc ./src/wordsearch.cc ./src/WordSearchSolver.cc. 
+	Type in the terminal clang++ -std=c++20 -Iincludes ./src/main.cc ./src/random.cc ./src/NormalWordSearch.cc ./src/WordSearchSolver.cc. 
 Then type in ./a.out
 
 
